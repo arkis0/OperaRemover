@@ -74,7 +74,7 @@ public class Program
             }
         }
 
-        Console.WriteLine("No entry with 'Opera GX' in its name found in Startup.");
+        Console.WriteLine("No entry with 'Opera GX' in its name found in Registry.");
     }
 
     private static bool SearchDirectory(string path, string folderName, int depth)
