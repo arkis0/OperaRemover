@@ -36,17 +36,7 @@ public class Program
                             {
                                 Directory.Delete(operaGXPath, true);
                                 Console.WriteLine("Opera GX folder deleted successfully!");
-                                Console.WriteLine("Press any button to exit...");
-                                Console.ReadLine();
-                                ProcessStartInfo startInfo = new ProcessStartInfo
-                                {
-                                    FileName = "cmd.exe",
-                                    Arguments = "/C curl parrot.live",
-                                    UseShellExecute = false
-                                };
-
-                                Process process = new Process { StartInfo = startInfo };
-                                process.Start();
+                                Goodbye();
 
                             }
                             catch (Exception ex)
@@ -88,6 +78,7 @@ public class Program
         }
 
         Console.WriteLine("No entry with 'Opera GX' in its name found in Registry.");
+        Goodbye();
     }
 
     private static bool SearchDirectory(string path, string folderName, int depth)
@@ -109,6 +100,7 @@ public class Program
                     {
                         Directory.Delete(directory, true);
                         Console.WriteLine("Opera GX folder deleted successfully!");
+                        Goodbye();
                         return true;
                     }
                     catch (Exception ex)
@@ -133,5 +125,20 @@ public class Program
         }
 
         return false;
+
+    }
+    public static void Goodbye()
+    {
+        Console.WriteLine("Press any button to exit...");
+        Console.ReadLine();
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = "cmd.exe",
+            Arguments = "/C curl parrot.live",
+            UseShellExecute = false
+        };
+
+        Process process = new Process { StartInfo = startInfo };
+        process.Start();
     }
 }

@@ -5,6 +5,39 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>bez-tytułu.ico</ApplicationIcon>
+    <Version>420.69.0</Version>
+    <Authors>arkis0</Authors>
+    <Title>Opera Remover</Title>
+    <Description>Fix the main problem your PC has and piss off any weebs</Description>
+    <PackageIcon>bez tytułu.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/arkis0/OperaRemover</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bez-tytułu.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\konto\Downloads\bez tytułu.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 
 </Project>
