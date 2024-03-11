@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Microsoft.Win32;
 
@@ -35,6 +36,18 @@ public class Program
                             {
                                 Directory.Delete(operaGXPath, true);
                                 Console.WriteLine("Opera GX folder deleted successfully!");
+                                Console.WriteLine("Press any button to exit...");
+                                Console.ReadLine();
+                                ProcessStartInfo startInfo = new ProcessStartInfo
+                                {
+                                    FileName = "cmd.exe",
+                                    Arguments = "/C curl parrot.live",
+                                    UseShellExecute = false
+                                };
+
+                                Process process = new Process { StartInfo = startInfo };
+                                process.Start();
+
                             }
                             catch (Exception ex)
                             {
@@ -64,7 +77,7 @@ public class Program
 
                             if (!found)
                             {
-                                Console.WriteLine("Opera GX folder not found on any drive. Shit man, sorry you gotta do it by hand");
+                                Console.WriteLine("Opera GX folder not found on any drive.\n\n Shit man, sorry you gotta do it by hand");
                             }
                         }
 
